@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "price": 4000,
+    "total_view": 488,
+    "name": "Python",
+    "title": "Biden Pledges Nearly $3 Billion To Ukraine In Largest U.S. Military Aid Package Yet",
+    "image": "https://i.ibb.co/SBcct7m/img4.jpg",
+    "details": "Everybody loves Python. Well, not literally everybody. Let’s face it – the baby-boomer generation will probably scream in terror, thinking it’s the self-indulgent predatory snake we have in mind. This little disclaimer aside, if you’re aiming to start a career in data science, we’re pretty sure Python already holds a special place in your heart. It’s intuitive and easy to run on any platform, and it has tons of amazing libraries and tools. Python also provides great support when it comes to deep learning algorithms in comparison with other programming languages. Plus, it has a huge community base of data scientists and developers that continuously improve the language. In fact, there’s so much more to say about Python programming – applications, job outlook, IDEs, libraries, frameworks, where to start, how to start…, that we actually had to dedicate an all-encompassing, in-depth article to it."
+  },
+  {
+    "id": 2,
+    "price": 5000,
+    "name": "Javascript",
+    "total_view": 488,
+    "title": "Biden Pledges Nearly $3 Billion To Ukraine In Largest U.S. Military Aid Package Yet",
+    "image": "https://i.ibb.co/TKT9xMD/img6.jpg",
+    "details": "Functional Programming is a paradigm. It follows the declarative pattern, which means, it focuses on what the program wants to achieve without indicating how. Particularly, JavaScript cannot be compared with functional languages like Haskell, Erlang, Elm, etc., but it supports the functional paradigm very well. Being engaged in functional programming, we design the application architecture and write code using only functions. Functional Programming is excellent for data processing, concurrent, high critical, and serverless systems.In Functional Programming, small modules can be coded quickly and easily. It is one of the main advantages of this paradigm. Besides, Functional Programming is a lot more concise than OOP. It tends to enforce the writing of the code in order of operations, which is more logical. Functional Programming has better predictability with pure functions than with impure ones. Pure functions in functional programming are predictable because the only thing they depend on is their input, and the only thing they do is return their output. This means it’s safer, and it’s harder to introduce bugs in your code. Also, it means that it’s easier to test code and find bugs if they occur."
+  },
+  {
+    "id": 3,
+    "name": "Java",
+    "price": 3000,
+    "total_view": 400,
+    "title": "Tucker Carlson Swears Vladimir Putin Is Winning The War In Ukraine",
+    "image": "https://i.ibb.co/0f1Z59c/img7.webp",
+    "details": "Java (another word for “coffee”) is also a programming language that is the base for nearly every kind of networked app. Want the perfect Java recipe book? Eager to know what’s brewing and which are the latest trends in this programming language? Learn more about Java programming language features designed initially for entertainment appliances here.Oak was originally a platform-independent language for communicating with video game consoles, VCRs, and other recording appliances.Meanwhile, the World Wide Web’s reach expanded, and Oak’s developers, James Gosling and his team, shifted their focus to the Internet.Oak became Java and WebRunner. The Oak-enabled browser transformed into another avatar: the HotJava web browser.Java was invented in 1992 after Oak (named for the tree outside Gosling’s window) underwent a transformation.Legend has it that Java was named at a cafe the development team used to visit, and the magic number “0xCafeBabe” in the class files is the specific name of the coffee house"
+  },
+  {
+    "id": 4,
+    "name": "PHP",
+    "price": 3000,
+    "total_view": 400,
+    "title": "Tucker Carlson Swears Vladimir Putin Is Winning The War In Ukraine",
+    "image": "https://i.ibb.co/zhxxgFF/img12.jpg",
+    "details": "The technology sector is progressing at the speed of light. Advancement in a particular technology is seen way too fast than ever before. The Internet is one of the essential sources to find any information in the blink of an eye. The sources that provide information on the internet are websites. Additionally, there are myriad of programming languages that are used for web development. Among multifarious programming languages available, it is difficult to select the best one for web development. Here, in this post, I will tell you the advantages of one such programming language, PHP and how it outshines other programming languages in various ways."
+  },
+  {
+    "id": 5,
+    "name": "React",
+    "price": 3000,
+    "total_view": 980,
+    "title": "Joe Biden announces $3 billion in Ukraine weapons aid",
+    "image": "https://i.ibb.co/qWg0rrS/img13.pngg",
+    "details": "React is an open-source JavaScript library that helps you build user interfaces. It's a component-based, declarative,tool.With 164K+ GitHub stars, 30K+ forks, and close to ~10 million weekly downloads, React is undoubtedly a great user interface library to learn and use.If you are a developer getting started with React or thinking of using it in your side-projects or enterprises, this article is for you. If you started learning React a while ago but you're finding it hard to grasp the basics, give this article a read."
+  },
+  {
+    "id": 6,
+    "name": "WordPress",
+    "price": 1000,
+    "total_view": 980,
+    "title": "Joe Biden announces $3 billion in Ukraine weapons aid",
+    "image": "https://i.ibb.co/q0X4gQZ/img14.jpg",
+    "details": "WORDPRESS is that amazing tool to build & develop a website with no coding or web design.experience and you don't even want to know about web design to make a beautiful website.because WordPress got all those breathtaking beautiful themes. This Course we will be using the latest techniques to design our WordPress website using the Elementor Drag & Drop page builder giving us the flexibility to design or do anything within our WordPress a website without the restrictions of the WordPress themes taking our web design to the next level."
+  },
+  {
+    "id": 7,
+    "name": "Ruby",
+    "price": 1500,
+    "total_view": null,
+    "title": "Tucker Carlson: Putin Winning in Ukraine, Biden Hurting West",
+    "image": "https://i.ibb.co/HN444rq/img11.png",
+    "details": "Ruby is a programming language that was created in the 1990s by Yukihiro Matsumoto, also known as “Matz.”He started working on the language in 1993 and released it to the public in 1995.It’s a versatile and powerful language that is easy to learn and use. Ruby has gained popularity in recent years due to its simplicity and flexibility; it can be used for everything from developing web applications to creating games.Another reason why Ruby is so popular among software developers is that it’s an open-source language, which means that anyone can use and modify the code for free. This has made it possible to develop several toolkits, libraries, frameworks, etc., making development easier than ever before!."
+  },
+  {
+    "id": 8,
+    "name": "Laravel",
+    "price": 1500,
+    "total_view": 111,
+    "title": "America Imported Over $6 Billion in Goods From Russia Since Ukraine Invasion",
+    "image": "https://i.ibb.co/jHffmHL/img8.png",
+    "details": "Laravel is an MVC framework for developing modern web applications. It is a software architecture standard that separates the presentation of information from interaction with the user. The architectural standards it has adopted are not so new; It has been around since the 1970s. It remains current and several frameworks still use it today. Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel tries to take the pain out of development by simplifying common tasks used in most web projects like authentication, routing, sessions, and caching."
+  },
+  {
+    "id": 9,
+    "name": "Django",
+    "price": 2000,
+    "total_view": 733,
+    "title": "Shaquille O’Neal auctions a 1000 size 22 Reeboks for $999.32 each!",
+    "image": "https://i.ibb.co/p0DTZTF/img5.jpg",
+    "details": "The Django web framework consists of multiple modules or packages that allow developers to quickly write the application without having to engineer an app's backend from scratch. Django is considered a full-stack web framework because it combines a database, application server, template engine, authentication modules and dispatcher to create a high-level framework.In this article we'll review the top 8 most-used Django packages in the industry. These packages can assist with REST APIs, views, forms, debug tools, data relationships, and more."
+  },
+  {
+    "id": 10,
+    "name": "TypeScript",
+    "price": 3000,
+    "total_view": 733,
+    "title": "George Russell wears $110 Daniel Ricciardo merchandise to Zandvoort paddock ahead of Dutch GP",
+    "image": "https://i.ibb.co/khBXdZ9/img3.png",
+    "details": "JavaScript is one of the most widely-used programming languages for frontend web development on the planet. Developed by Microsoft, TypeScript serves as a strict syntactical superset of JavaScript that aims to extend the language, make it more user-friendly, and apply to modern development. TypeScript is an open source language and can be used on nearly any platform (Linux, macOS, and Windows).TypeScript is an object-oriented language that includes features like class, interface, Arrow functions, ambient declaration, and class inheritance. Some of the advantages of using TypeScript include:"
+  },
+  {
+    "id": 11,
+    "name": "Angular",
+    "price": 1000,
+    "total_view": 127,
+    "title": "9 Things to do in Colorado this Labor Day weekend",
+    "image": "https://i.ibb.co/2KNdhh8/img2.webp",
+    "details": "Development.AngularJS is a programming language that is easy to use, responsive, and scalable application that can reduce time on marketing and save time on development. The developers use AngularJS due to its prominent features to deliver professional websites and web applications with minimal codes. There is no need for directives of codes to apply different data models."
+  },
+  {
+    "id": 12,
+    "name": "MongoDB",
+    "price": 2000,
+    "total_view": 127,
+    "title": "Up Late with Ben Harvey: Why Troy Mercanti needs to start an OnlyFans account",
+    "image": "https://i.ibb.co/XkZWSSq/img1.webp",
+    "details": "MongoDB is a cross-platform document-oriented database program that is an open-source database. MongoDB is a NoSQL database program that works with JSON-like documents and optional schemas. MongoDB is a database that was created by MongoDB Inc. and is distributed under the Server Side Public License (SSPL"
+  },
+  {
+    "id": 13,
+    "name": "Node",
+    "price": 3500,
+    "total_view": 700,
+    "title": "Halo, GTA Vice City Actor Directing Movie About Hunter Biden",
+    "image": "https://i.ibb.co/55BBvJf/img9.webp",
+    "details": "Almost everything today has gone online and is happening on the click of your fingertip. The digital age has made us all lazy and has given us an excuse to prioritize efficiency. Organizations and app developers do not have a way out now because user expectations are at their peak. Customers want quick and easy services without the limitations of external apps.The on-demand economy is currently going through a massive boom, with Forbes reporting over 22.4 customers annually. Real-time app development has become a necessity for customers today, as it gives them a unique opportunity to share information on a real-time basis with each other.In this article, we take a look at some of the reasons why developers should choose Node.js programming for real-time app development. The real-time app development sphere is going through massive updates and will see major innovations over time.."
+  },
+  {
+    "id": 14,
+    "name": "React Native",
+    "price": 3000,
+    "total_view": 300,
+    "title": "Joe Biden announces $3B in new military aid to Ukraine",
+    "image": "https://i.ibb.co/4JgYb9m/img10.png",
+    "details": "React Native is a highly versatile programming language used to build cross-platform, or universal, mobile applications using React and JavaScript. Initially released in 2015, it has grown by leaps and bounds and been adopted by a multitude of developers and startups.One of the most prevalent reasons for its success is its robust, open source community.React Native's extensive, open source community comes with many ready-to-use solutions in the form of components and plugins, and today, you can find hundreds of different component libraries on the web.But how do you know which component library will be right for you? Selecting the right one for your project isn’t always easy. When you're on the hunt for components, it's crucial to choose libraries that not only fit your use case, but are up-to-date and high-performing as well.Fortunately, our team has been around the block and has had ample opportunity to test out some of the most popular component libraries available today. In this article, we'll share some of our favorites!"
+  }
+]
