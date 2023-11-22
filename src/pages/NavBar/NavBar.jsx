@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
-
+import userImg from '../../assets/user.png';
 const NavBar = () => {
     const { user, logOut } = useContext(AuthContext);
     const handleSignOut = () => {
@@ -39,7 +39,7 @@ const NavBar = () => {
                         {user ?
                             <img title={user?.email} src={user?.photoURL} alt="" />
                             :
-                            <img title={user?.email} src={user?.photoURL} alt="" />
+                            <img title={user?.email} src={userImg} alt="" />
                         }
                     </div>
                 </label>

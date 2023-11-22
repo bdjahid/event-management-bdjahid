@@ -1,13 +1,17 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Register = () => {
     const [error, setError] = useState();
     const [success, setSuccess] = useState();
     const [show, setShow] = useState(false);
-    const { createUser } = useContext(AuthContext);
+    const { githubSignIn, googleSignIn, createUser } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || "/";
+
     const handleRegister = (e) => {
         e.preventDefault()
         const name = e.target.name.value;
@@ -42,6 +46,7 @@ const Register = () => {
             .then(result => {
                 console.log(result.user)
                 setSuccess('User Created Successfully')
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.error(error)
@@ -50,6 +55,31 @@ const Register = () => {
 
     }
 
+    // google
+    const handleGoogleSign = () => {
+        googleSignIn().then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser)
+            // setUser(loggedUser)
+            // navigate(location?.state ? location.state : '/')
+            navigate(from, { replace: true })
+        })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+    // github
+    const handleGithubSign = () => {
+        githubSignIn()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser)
+                navigate(from, { replace: true })
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col">
@@ -102,8 +132,8 @@ const Register = () => {
                         </div>
                     </form>
                     <div className="text-center mb-8">
-                        <button className="btn btn-outline mr-4">Google</button>
-                        <button className="btn btn-outline">Github</button>
+                        <button onClick={handleGoogleSign} className="btn btn-outline mr-4">Google</button>
+                        <button onClick={handleGithubSign} className="btn btn-outline">Github</button>
                     </div>
                     <p className="text-center mb-5">Already have an account<Link to="/login" className="ms-1 underline text-blue-800">Login</Link></p>
                     <div className="text-center mb-5">

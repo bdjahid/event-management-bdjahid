@@ -1,14 +1,20 @@
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { GoogleAuthProvider, getAuth, sendPasswordResetEmail, signInWithPopup } from "firebase/auth";
+import app from "../../firebase/firebase.config";
 // import { ToastContainer, toast } from 'react-toastify';
 
 const Login = () => {
-    const { signInUser, googleSignIn, githubSignIn } = useContext(AuthContext);
+    const auth = getAuth(app);
+    const googleProvider = new GoogleAuthProvider();
+    const { signInUser, githubSignIn } = useContext(AuthContext);
     const [error, setError] = useState();
     const [success, setSuccess] = useState();
+    const emailRef = useRef();
     const location = useLocation();
     const navigate = useNavigate();
+    const from = location.state?.from?.pathname || "/";
 
     const handleLogin = (e) => {
         e.preventDefault()
@@ -34,7 +40,8 @@ const Login = () => {
             .then(result => {
                 console.log(result.user)
                 // navigate after login
-                navigate(location?.state ? location.state : '/')
+                // navigate(location?.state ? location.state : '/')
+                navigate(from, { replace: true })
                 setSuccess('User Logged in Successfully')
             })
             .catch(error => {
@@ -43,11 +50,13 @@ const Login = () => {
             })
     }
     const handleGoogleSign = () => {
-        googleSignIn()
+        signInWithPopup(auth, googleProvider)
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
                 // setUser(loggedUser)
+                // navigate(location?.state ? location.state : '/')
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.log(error)
@@ -58,9 +67,33 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.log(error)
+            })
+    }
+
+    const handleForgetPassword = () => {
+        const email = emailRef.current.value;
+        if (!email) {
+            console.log('please provide a email', emailRef.current.value);
+            return;
+        }
+        else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+            console.log('please write a valid email');
+            return;
+        }
+
+        // send validation email
+        sendPasswordResetEmail(auth, email,)
+            .then(() => {
+                alert('please check your email')
+                // toast('please check your email')
+                console.log('please check your email')
+            })
+            .catch(error => {
+                console.error(error);
             })
     }
     return (
@@ -75,16 +108,20 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" name="email" placeholder="email" className="input input-bordered" required />
+                            <input ref={emailRef} type="email" name="email" placeholder="email" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
                             <input type="password" name="password" placeholder="password" className="input input-bordered" required />
-                            <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                            </label>
+                            <div>
+                                <label className="label">
+                                    <a href="#"
+                                        onClick={handleForgetPassword} className="label-text-alt link link-hover">Forgot password?</a>
+                                    {/* <ToastContainer /> */}
+                                </label>
+                            </div>
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
@@ -94,7 +131,7 @@ const Login = () => {
                         <button onClick={handleGoogleSign} className="btn btn-outline mr-4">Google</button>
                         <button onClick={handleGithubSign} className="btn btn-outline">Github</button>
                     </div>
-                    <p className="text-center mb-5">New to create account<Link to="/register" className="ms-1 underline text-blue-300">Register</Link></p>
+                    <p className="text-center mb-5">New to create account<Link to="/register" className="ms-1 underline text-blue-800">Register</Link></p>
                     <div className="text-center mb-5">
                         {
                             error && <p className="text-red-800">{error}</p>
