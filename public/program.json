@@ -57,7 +57,7 @@
     "id": 7,
     "name": "Ruby",
     "price": 1500,
-    "total_view": null,
+    "total_view": 500,
     "title": "Tucker Carlson: Putin Winning in Ukraine, Biden Hurting West",
     "image": "https://i.ibb.co/HN444rq/img11.png",
     "details": "Ruby is a programming language that was created in the 1990s by Yukihiro Matsumoto, also known as “Matz.”He started working on the language in 1993 and released it to the public in 1995.It’s a versatile and powerful language that is easy to learn and use. Ruby has gained popularity in recent years due to its simplicity and flexibility; it can be used for everything from developing web applications to creating games.Another reason why Ruby is so popular among software developers is that it’s an open-source language, which means that anyone can use and modify the code for free. This has made it possible to develop several toolkits, libraries, frameworks, etc., making development easier than ever before!."
@@ -93,7 +93,7 @@
     "id": 11,
     "name": "Angular",
     "price": 1000,
-    "total_view": 127,
+    "total_view": 527,
     "title": "9 Things to do in Colorado this Labor Day weekend",
     "image": "https://i.ibb.co/2KNdhh8/img2.webp",
     "details": "Development.AngularJS is a programming language that is easy to use, responsive, and scalable application that can reduce time on marketing and save time on development. The developers use AngularJS due to its prominent features to deliver professional websites and web applications with minimal codes. There is no need for directives of codes to apply different data models."
@@ -102,7 +102,7 @@
     "id": 12,
     "name": "MongoDB",
     "price": 2000,
-    "total_view": 127,
+    "total_view": 327,
     "title": "Up Late with Ben Harvey: Why Troy Mercanti needs to start an OnlyFans account",
     "image": "https://i.ibb.co/XkZWSSq/img1.webp",
     "details": "MongoDB is a cross-platform document-oriented database program that is an open-source database. MongoDB is a NoSQL database program that works with JSON-like documents and optional schemas. MongoDB is a database that was created by MongoDB Inc. and is distributed under the Server Side Public License (SSPL"
