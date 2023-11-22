@@ -1,11 +1,12 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-
+// import { ToastContainer, toast } from 'react-toastify';
 
 const Login = () => {
     const { signInUser, googleSignIn, githubSignIn } = useContext(AuthContext);
-
+    const [error, setError] = useState();
+    const [success, setSuccess] = useState();
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -14,15 +15,31 @@ const Login = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(email, password)
+
+        // reset error
+        setError('')
+        setSuccess('')
+
+        // validation and condition
+        if (password < 6) {
+            setError('Password should be at least 6 characters or longer')
+            return;
+        }
+        else if (!/[A-Z]/.test(password)) {
+            setError('Password should have at least one uppercase characters');
+            return;
+        }
         // sign In 
         signInUser(email, password)
             .then(result => {
                 console.log(result.user)
                 // navigate after login
                 navigate(location?.state ? location.state : '/')
+                setSuccess('User Logged in Successfully')
             })
             .catch(error => {
                 console.error(error)
+                setError(error.message)
             })
     }
     const handleGoogleSign = () => {
@@ -78,6 +95,14 @@ const Login = () => {
                         <button onClick={handleGithubSign} className="btn btn-outline">Github</button>
                     </div>
                     <p className="text-center mb-5">New to create account<Link to="/register" className="ms-1 underline text-blue-300">Register</Link></p>
+                    <div className="text-center mb-5">
+                        {
+                            error && <p className="text-red-800">{error}</p>
+                        }
+                        {
+                            success && <p className="text-green-800">{success}</p>
+                        }
+                    </div>
                 </div>
             </div>
         </div>
