@@ -11,13 +11,13 @@ import icon10 from '../../assets/icon10.png';
 import icon13 from '../../assets/icon13.png';
 import icon12 from '../../assets/icon12.png';
 import icon14 from '../../assets/java-vs-javascript-1.png';
-import './ExtraSectionIcon.css'
+
 
 const ExtraSectionIcon = () => {
     return (
         <div>
             <h2 className='text-center text-5xl font-bold'>Programming Course</h2>
-            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-60 gap-5 my-10 bg-slate-50'>
+            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 my-10 ms-6 lg:mx-60'>
                 <img className='w-48 h-48 rounded' src={icon1} alt="" />
                 <img className='w-48 h-48 rounded' src={icon2} alt="" />
                 <img className='w-48 h-48 rounded' src={icon3} alt="" />

@@ -1,17 +1,18 @@
 import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { GoogleAuthProvider, getAuth, sendPasswordResetEmail, signInWithPopup } from "firebase/auth";
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import app from "../../firebase/firebase.config";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 // import { ToastContainer, toast } from 'react-toastify';
 
 const Login = () => {
     const auth = getAuth(app);
-    const googleProvider = new GoogleAuthProvider();
-    const { signInUser, githubSignIn } = useContext(AuthContext);
+    const { signInUser, googleSignIn, githubSignIn } = useContext(AuthContext);
     const [error, setError] = useState();
     const [success, setSuccess] = useState();
-    const emailRef = useRef();
+    const emailRef = useRef(null);
+    const [show, setShow] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
     const from = location.state?.from?.pathname || "/";
@@ -20,17 +21,19 @@ const Login = () => {
         e.preventDefault()
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email, password)
+        const confirm = e.target.confirm.value;
+        console.log(email, password, confirm)
 
         // reset error
         setError('')
         setSuccess('')
 
         // validation and condition
-        if (password < 6) {
-            setError('Password should be at least 6 characters or longer')
-            return;
+        if (password !== confirm) {
+            setError('Your password did not match')
+            return
         }
+
         else if (!/[A-Z]/.test(password)) {
             setError('Password should have at least one uppercase characters');
             return;
@@ -43,6 +46,7 @@ const Login = () => {
                 // navigate(location?.state ? location.state : '/')
                 navigate(from, { replace: true })
                 setSuccess('User Logged in Successfully')
+
             })
             .catch(error => {
                 console.error(error)
@@ -50,7 +54,7 @@ const Login = () => {
             })
     }
     const handleGoogleSign = () => {
-        signInWithPopup(auth, googleProvider)
+        googleSignIn()
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
@@ -108,20 +112,32 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input ref={emailRef} type="email" name="email" placeholder="email" className="input input-bordered" required />
+                            <input ref={emailRef} type="email" name="email" placeholder="Email" className="input input-bordered" required />
                         </div>
+
+                        <div className="relative">
+                            <input type={show ? "text" : "password"}
+                                name="password" placeholder="password" className="input input-bordered w-full" required />
+                            <span className="mt-3 absolute top-1 right-2" onClick={() => setShow(!show)}>
+                                {
+                                    show ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                                }
+                            </span>
+                        </div>
+
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Password</span>
+                                <span className="label-text">Confirm</span>
                             </label>
-                            <input type="password" name="password" placeholder="password" className="input input-bordered" required />
-                            <div>
-                                <label className="label">
-                                    <a href="#"
-                                        onClick={handleForgetPassword} className="label-text-alt link link-hover">Forgot password?</a>
-                                    {/* <ToastContainer /> */}
-                                </label>
-                            </div>
+                            <input type="password" name="confirm" placeholder="Confirm Password" className="input input-bordered" required />
+                        </div>
+
+                        <div>
+                            <label className="label">
+                                <a href="#"
+                                    onClick={handleForgetPassword} className="label-text-alt link link-hover">Forgot password?</a>
+                                {/* <ToastContainer /> */}
+                            </label>
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>

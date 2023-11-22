@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
     const [error, setError] = useState();
@@ -46,7 +47,20 @@ const Register = () => {
             .then(result => {
                 console.log(result.user)
                 setSuccess('User Created Successfully')
-                navigate(from, { replace: true })
+
+
+                // update profile
+                updateProfile(result.user, {
+                    displayName: name,
+                    photoURL: photo
+                })
+                    .then(() => {
+                        navigate(from, { replace: true })
+                        console.log('profile update')
+                    })
+                    .catch(error => {
+                        console.error(error)
+                    })
             })
             .catch(error => {
                 console.error(error)
