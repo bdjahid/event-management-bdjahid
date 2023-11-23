@@ -25,3 +25,7 @@ Reusable Components
 JSX: JSX, a syntax extension in React
 
 State Management,
+
+Firebase Auth
+
+
