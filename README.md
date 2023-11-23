@@ -22,10 +22,11 @@ Routing with React Router
 
 Reusable Components
 
-JSX: JSX, a syntax extension in React
+JSX, a syntax extension in React
 
-State Management,
+State Management
 
 Firebase Auth
 
+Component-Based Architecture
 
