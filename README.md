@@ -14,6 +14,8 @@ Programming learn
 # Live Link
 
 
-#Bullet Point
+# Bullet Point
 
 SweetAlert
+
+Reusable Components,JSX: JSX, a syntax extension in React,State Management,
