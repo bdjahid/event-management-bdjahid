@@ -3,6 +3,11 @@ import { AuthContext } from "../../provider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { updateProfile } from "firebase/auth";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Swal from 'sweetalert2';
+
+
 
 const Register = () => {
     const [error, setError] = useState();
@@ -47,8 +52,12 @@ const Register = () => {
             .then(result => {
                 console.log(result.user)
                 setSuccess('User Created Successfully')
-
-
+                toast("Wow User Created Successfully")
+                Swal.fire({
+                    title: 'Successfully!',
+                    text: 'Wow User Created Successfully',
+                    confirmButtonText: 'ok'
+                })
                 // update profile
                 updateProfile(result.user, {
                     displayName: name,
@@ -160,6 +169,7 @@ const Register = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };

@@ -4,7 +4,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import app from "../../firebase/firebase.config";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-// import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Swal from 'sweetalert2'
 
 const Login = () => {
     const auth = getAuth(app);
@@ -43,16 +44,22 @@ const Login = () => {
             .then(result => {
                 console.log(result.user)
                 // navigate after login
-                // navigate(location?.state ? location.state : '/')
                 navigate(from, { replace: true })
-                setSuccess('User Logged in Successfully')
-
+                // alert
+                setSuccess('User logged in Successfully')
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Wow User logged in Successfully',
+                    icon: 'error',
+                    confirmButtonText: 'ok'
+                })
             })
             .catch(error => {
                 console.error(error)
                 setError(error.message)
             })
     }
+
     const handleGoogleSign = () => {
         googleSignIn()
             .then(result => {
