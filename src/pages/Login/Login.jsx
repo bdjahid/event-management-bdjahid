@@ -23,6 +23,7 @@ const Login = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         const confirm = e.target.confirm.value;
+
         console.log(email, password, confirm)
 
         // reset error
@@ -30,17 +31,18 @@ const Login = () => {
         setSuccess('')
 
         // validation and condition
-        if (password !== confirm) {
-            setError('Your password did not match')
-            return
-        }
 
-        else if (!/(?=.*[A-Z])(?=.*[!@#$%^&*()])/.test(password)) {
-            console.log('Password should have at least one uppercase or special characters')
-            setError('Password should have at least one uppercase characters');
+        if (password !== confirm) {
+            Swal.fire({
+                title: 'Error!',
+                text: 'Your password did not match',
+                confirmButtonText: 'ok'
+            })
+            setError('Your password did not match')
             return;
         }
-        // sign In 
+
+
         signInUser(email, password)
             .then(result => {
                 console.log(result.user)
@@ -110,7 +112,7 @@ const Login = () => {
     }
     return (
         <div className="hero min-h-screen bg-base-200">
-            <div className="hero-content flex-col">
+            <div className="hero-content flex-col w-full">
                 <div className="text-center lg:text-left my-10">
                     <h1 className="text-5xl font-bold">Login now!</h1>
                 </div>
@@ -137,23 +139,29 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Confirm</span>
                             </label>
-                            <input type="password" name="confirm" placeholder="Confirm Password" className="input input-bordered" required />
+                            <div className="relative">
+                                <input type={show ? "text" : "password"} name="confirm" placeholder="Confirm Password" className="input input-bordered w-full" required />
+                                <span className="mt-3 absolute top-1 right-2" onClick={() => setShow(!show)}>
+                                    {
+                                        show ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                                    }
+                                </span>
+                            </div>
                         </div>
 
                         <div>
                             <label className="label">
                                 <a href="#"
                                     onClick={handleForgetPassword} className="label-text-alt link link-hover">Forgot password?</a>
-                                {/* <ToastContainer /> */}
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Login</button>
+                            <button className="btn btn-success text-white">Login</button>
                         </div>
                     </form>
                     <div className="text-center mb-8">
-                        <button onClick={handleGoogleSign} className="btn btn-outline mr-4">Google</button>
-                        <button onClick={handleGithubSign} className="btn btn-outline">Github</button>
+                        <button onClick={handleGoogleSign} className="btn btn-outline mr-8 w-36">Google</button>
+                        <button onClick={handleGithubSign} className="btn btn-outline w-36">Github</button>
                     </div>
                     <p className="text-center mb-5">New to create account<Link to="/register" className="ms-1 underline text-blue-800">Register</Link></p>
                     <div className="text-center mb-5">

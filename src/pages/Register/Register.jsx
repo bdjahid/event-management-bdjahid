@@ -38,7 +38,6 @@ const Register = () => {
             return;
         }
         else if (!/(?=.*[A-Z])(?=.*[!@#$%^&*()])/.test(password)) {
-            console.log('Password should have at least one uppercase or special characters')
             setError('Password should have at least one uppercase characters');
             return;
         }
@@ -106,7 +105,7 @@ const Register = () => {
     }
     return (
         <div className="hero min-h-screen bg-base-200">
-            <div className="hero-content flex-col">
+            <div className="hero-content flex-col w-full">
                 <div className="text-center lg:text-left my-10">
                     <h1 className="text-5xl font-bold">Register now!</h1>
                 </div>
@@ -152,12 +151,12 @@ const Register = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Register</button>
+                            <button className="btn btn-success text-white">Register</button>
                         </div>
                     </form>
                     <div className="text-center mb-8">
-                        <button onClick={handleGoogleSign} className="btn btn-outline mr-4">Google</button>
-                        <button onClick={handleGithubSign} className="btn btn-outline">Github</button>
+                        <button onClick={handleGoogleSign} className="btn btn-outline mr-8 w-36">Google</button>
+                        <button onClick={handleGithubSign} className="btn btn-outline w-36">Github</button>
                     </div>
                     <p className="text-center mb-5">Already have an account<Link to="/login" className="ms-1 underline text-blue-800">Login</Link></p>
                     <div className="text-center mb-5">

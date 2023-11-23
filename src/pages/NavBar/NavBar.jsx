@@ -26,7 +26,7 @@ const NavBar = () => {
                         {linkBar}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">Programming   learn</a>
+                <a className="btn btn-ghost text-xl">Programming learn</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
