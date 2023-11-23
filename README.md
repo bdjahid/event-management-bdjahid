@@ -16,6 +16,12 @@ Programming learn
 
 # Bullet Point
 
-SweetAlert,Routing with React Router
+SweetAlert
 
-Reusable Components,JSX: JSX, a syntax extension in React,State Management,
+Routing with React Router
+
+Reusable Components
+
+JSX: JSX, a syntax extension in React
+
+State Management,
